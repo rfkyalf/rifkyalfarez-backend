@@ -1,5 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const dotenv = require('dotenv').config({ path: '.env.local' });
 const aboutRoute = require('./routes/about.route');
 const experienceRoute = require('./routes/experience.route');
 const projectRoute = require('./routes/project.route');
@@ -7,9 +8,8 @@ const stackRoute = require('./routes/stack.route');
 
 const app = express();
 
-const port = 5000;
-const mongoURL =
-  'mongodb+srv://alfarez2325:Yamete123@express-mongo.kwgayus.mongodb.net/rifkyalfarez-backend?retryWrites=true&w=majority&appName=express-mongo';
+const port = process.env.PORT || 5000;
+const mongoURL = process.env.MONGO_URI;
 
 // Middleware
 app.use(express.json());
