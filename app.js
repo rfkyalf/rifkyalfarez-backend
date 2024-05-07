@@ -1,6 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
-const dotenv = require('dotenv').config({ path: '.env' });
+const dotenv = require('dotenv').config();
 const aboutRoute = require('./routes/about.route');
 const experienceRoute = require('./routes/experience.route');
 const projectRoute = require('./routes/project.route');
